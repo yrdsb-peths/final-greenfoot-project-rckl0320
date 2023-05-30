@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bear extends Actor
+public class Chara extends Actor
 {
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
@@ -17,26 +17,27 @@ public class Bear extends Actor
         int tracker = 0;
         
         
-        if (Greenfoot.isKeyDown("up"))
+        if (Greenfoot.isKeyDown("up") && (tracker == 0))
         {
             setRotation(270);
-            move(2);
+            move(3);
             
         }
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("down") && (tracker == 0))
         {
             setRotation(90);
-            move(2);
+            move(3);
         }
-        else if (Greenfoot.isKeyDown("left"))
+        else if (Greenfoot.isKeyDown("left") && (tracker == 0))
         {
             setRotation(180);
-            move(2);
+            move(3);
         }
-        else if (Greenfoot.isKeyDown("right"))
+        else if (Greenfoot.isKeyDown("right") && (tracker == 0))
         {
             setRotation(0);
-            move(2);
+            move(3);
         }
+        
     }
 }
