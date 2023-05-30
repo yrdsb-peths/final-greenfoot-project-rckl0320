@@ -14,22 +14,26 @@ public class Bear extends Actor
      */
     public void act()
     {
+        int tracker = 0;
+        
+        
         if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
             move(2);
+            
         }
-        if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
             move(2);
         }
-        if (Greenfoot.isKeyDown("left"))
+        else if (Greenfoot.isKeyDown("left"))
         {
             setRotation(180);
             move(2);
         }
-        if (Greenfoot.isKeyDown("right"))
+        else if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
             move(2);
