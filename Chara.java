@@ -24,7 +24,7 @@ public class Chara extends Actor
             if(rotation1 == 1)
             {
                 rotation1 = getRotation();
-                System.out.println(rotation1);
+                System.out.println("yes");
             }
             
         }
@@ -35,7 +35,7 @@ public class Chara extends Actor
             {
                 rotation1 = 1;
                 rotation2 = 1;
-                System.out.println(rotation1);
+                System.out.println("no");
             }
         }
         
@@ -46,7 +46,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
             if(rotation2 != rotation1)
             {
-                move(1);
+                move(2);
             }
             
             
@@ -63,7 +63,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
             if(rotation2 != rotation1)
             {
-                move(1);
+                move(2);
             }
             
             
@@ -79,7 +79,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
             if(rotation2 != rotation1)
             {
-                move(1);
+                move(2);
             }
             
             
@@ -95,7 +95,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
             if(rotation2 != rotation1)
             {
-                move(1);
+                move(2);
             }
             
         
