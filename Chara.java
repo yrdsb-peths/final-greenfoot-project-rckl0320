@@ -15,29 +15,91 @@ public class Chara extends Actor
     public void act()
     {
         int tracker = 0;
+        int rotation1 = 1;
+        int rotation2 = 1;
         
+        if(isTouching(Wall.class))
+        {
+            tracker = 1;
+            rotation1 = getRotation();
+        }
         
-        if (Greenfoot.isKeyDown("up") && (tracker == 0))
+        else
+        {
+            rotation1 = 1;
+            rotation2 = 1;
+        }
+        
+        if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
-            move(3);
+            
+            rotation2 = getRotation();
+            if(rotation2 != rotation1)
+            {
+                move(1);
+            }
+            
+            
+            if(tracker == 0)
+            {
+                move(3);
+            }
             
         }
-        else if (Greenfoot.isKeyDown("down") && (tracker == 0))
+        else if (Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
-            move(3);
+            
+            rotation2 = getRotation();
+            if(rotation2 != rotation1)
+            {
+                move(1);
+            }
+            
+            
+            if(tracker == 0)
+            {   
+                move(3);
+            }
         }
-        else if (Greenfoot.isKeyDown("left") && (tracker == 0))
+        else if (Greenfoot.isKeyDown("left"))
         {
             setRotation(180);
-            move(3);
+            
+            rotation2 = getRotation();
+            if(rotation2 != rotation1)
+            {
+                move(1);
+            }
+            
+            
+            if(tracker == 0)
+            {    
+                move(3);
+            }
         }
-        else if (Greenfoot.isKeyDown("right") && (tracker == 0))
+        else if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
-            move(3);
+            
+            rotation2 = getRotation();
+            if(rotation2 != rotation1)
+            {
+                move(1);
+            }
+            
+        
+            if(tracker == 0)
+            {    
+                move(3);
+            }
         }
         
+    }
+    
+    public int getLocation()
+    {
+        return(getX() + getY());
     }
 }
