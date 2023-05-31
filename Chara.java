@@ -24,7 +24,6 @@ public class Chara extends Actor
             if(rotation1 == 1)
             {
                 rotation1 = getRotation();
-                System.out.println("yes");
             }
             
         }
@@ -35,22 +34,17 @@ public class Chara extends Actor
             {
                 rotation1 = 1;
                 rotation2 = 1;
-                System.out.println("no");
             }
         }
+        
         
         if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
             
             rotation2 = getRotation();
+ 
             if(rotation2 != rotation1)
-            {
-                move(2);
-            }
-            
-            
-            if(tracker == 0)
             {
                 move(3);
             }
@@ -61,13 +55,8 @@ public class Chara extends Actor
             setRotation(90);
             
             rotation2 = getRotation();
+
             if(rotation2 != rotation1)
-            {
-                move(2);
-            }
-            
-            
-            if(tracker == 0)
             {   
                 move(3);
             }
@@ -77,29 +66,20 @@ public class Chara extends Actor
             setRotation(180);
             
             rotation2 = getRotation();
+
             if(rotation2 != rotation1)
-            {
-                move(2);
-            }
-            
-            
-            if(tracker == 0)
             {    
                 move(3);
             }
         }
+        
         else if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
             
             rotation2 = getRotation();
+
             if(rotation2 != rotation1)
-            {
-                move(2);
-            }
-            
-        
-            if(tracker == 0)
             {    
                 move(3);
             }
