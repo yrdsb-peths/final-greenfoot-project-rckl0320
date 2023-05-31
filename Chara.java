@@ -21,13 +21,22 @@ public class Chara extends Actor
         if(isTouching(Wall.class))
         {
             tracker = 1;
-            rotation1 = getRotation();
+            if(rotation1 == 1)
+            {
+                rotation1 = getRotation();
+                System.out.println(rotation1);
+            }
+            
         }
         
         else
         {
-            rotation1 = 1;
-            rotation2 = 1;
+            if((getRotation() != 270) && (getRotation() != 90))
+            {
+                rotation1 = 1;
+                rotation2 = 1;
+                System.out.println(rotation1);
+            }
         }
         
         if (Greenfoot.isKeyDown("up"))
