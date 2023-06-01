@@ -14,10 +14,12 @@ public class Chara extends Actor
      */
     public void act()
     {
+        //Variables for collision detection
         int tracker = 0;
         int rotation1 = 1;
         int rotation2 = 1;
         
+        //collision detector
         if(isTouching(Wall.class))
         {
             tracker = 1;
@@ -37,7 +39,7 @@ public class Chara extends Actor
             }
         }
         
-        
+        //Movement and collision input
         if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
@@ -46,6 +48,7 @@ public class Chara extends Actor
  
             if(rotation2 != rotation1)
             {
+    
                 move(3);
             }
             
@@ -80,7 +83,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
 
             if(rotation2 != rotation1)
-            {    
+            {
                 move(3);
             }
         }
