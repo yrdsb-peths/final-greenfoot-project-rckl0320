@@ -85,6 +85,7 @@ public class Chara extends Actor
             }
         }
         
+        
     }
     
     public int getLocation()
