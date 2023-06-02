@@ -61,12 +61,12 @@ public class Chara extends Actor
             
             rotation2 = getRotation();
 
-            if(rotation2 != rotation1){
-                
+            if(rotation2 != rotation1){       
                 move(3);
             }
         }
         
+       
         else if (Greenfoot.isKeyDown("right")){
             setRotation(0);
             
