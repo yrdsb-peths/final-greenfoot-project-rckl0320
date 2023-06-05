@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Title here.
+ * Starting screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Rick
+ * @version 1
  */
 public class Title extends World
 {
@@ -16,6 +16,16 @@ public class Title extends World
     public Title()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(816, 624, 1); 
+    }
+
+    
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameStart = new MyWorld();
+            Greenfoot.setWorld(gameStart);
+        }
     }
 }
