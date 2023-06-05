@@ -77,6 +77,12 @@ public class Chara extends Actor
             }
         }
         
+        
+        if(getY() == 0)
+        {
+            World1 Second = new World1();
+            Greenfoot.setWorld(Second);
+        }
 
     }
     
