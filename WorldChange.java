@@ -30,16 +30,17 @@ public class WorldChange extends Actor
     public void act()
     {
         switch (endPoint){
-        case "MyWorld":
-            Greenfoot.setWorld(new World1(x, y));
-            break;
-        
-        case "World1":
-            if(selector == 1){
-                Greenfoot.setWorld(new MyWorld(x, y));
+            
+            case "MyWorld":
+                Greenfoot.setWorld(new World1(x, y));
                 break;
-            }
-            break;
+        
+            case "World1":
+                if(selector == 1){
+                    Greenfoot.setWorld(new MyWorld(x, y));
+                    break;
+                }
+                break;
 
         }
     }
