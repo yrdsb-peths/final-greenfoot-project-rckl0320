@@ -13,13 +13,13 @@ public class World1 extends World
      * Constructor for objects of class World1.
      * 
      */
-    public World1()
+    public World1(int x, int y)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(816, 624, 1); 
         
         Chara player = new Chara();
-        addObject(player, getWidth()/2, 624);
+        addObject(player, x, y);
     }
     
 }

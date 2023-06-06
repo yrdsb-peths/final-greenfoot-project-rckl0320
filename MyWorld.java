@@ -13,22 +13,28 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
+    public MyWorld(int x, int y)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(816, 624, 1, true);
         
         Chara player = new Chara();
         
-        addObject(player, getWidth()/2, 500);
+        addObject(player, getWidth()/2, 550);
         
         Wall wol = new Wall();
         
         addObject(wol, 300, 250);
         
+        WorldChange a = new WorldChange();
+        addObject(a, getWidth()/2, 0); 
         
         
     }
     
+    public void act()
+    {
+        
+    }
 
 }
