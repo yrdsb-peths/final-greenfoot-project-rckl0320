@@ -13,7 +13,7 @@ public class WorldChange extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    String start;
+    String endPoint;
     int x;
     int y;
     int selector;
@@ -22,25 +22,25 @@ public class WorldChange extends Actor
     {
         this.x = x;
         this.y = y;
-        start = z;
+        endPoint = z;
         selector = a;
         
     }
     
     public void act()
     {
-        if(isTouching(Chara.class))
-        {
-            if(start == "MyWorld"){
-                World1 wrld = new World1(x, y);
-                Greenfoot.setWorld(wrld);
-            
+        switch (endPoint){
+        case "MyWorld":
+            Greenfoot.setWorld(new World1(x, y));
+            break;
+        
+        case "World1":
+            if(selector == 1){
+                Greenfoot.setWorld(new MyWorld(x, y));
+                break;
             }
-            if(start == "World1" && selector == 1)
-            {
-                MyWorld wrld = new MyWorld(x, y);
-                Greenfoot.setWorld(wrld);
-            }
+            break;
+
         }
     }
 }
