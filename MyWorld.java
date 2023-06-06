@@ -19,11 +19,9 @@ public class MyWorld extends World
         super(816, 624, 1, true);
         
         Chara player = new Chara();
-        
         addObject(player, getWidth()/2, 550);
         
         Wall wol = new Wall();
-        
         addObject(wol, 300, 250);
         
         WorldChange a = new WorldChange();

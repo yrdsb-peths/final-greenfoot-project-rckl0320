@@ -13,15 +13,15 @@ public class WorldChange extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    String endPoint;
-    int x;
-    int y;
-    int selector;
+    static String endPoint = "";
+    static int x;
+    static int y;
+    static int selector;
     
-    public void toWorld(int x, int y, String z, int a)
+    public static void toWorld(int h, int v, String z, int a)
     {
-        this.x = x;
-        this.y = y;
+        x = h;
+        y = v;
         endPoint = z;
         selector = a;
         
@@ -29,7 +29,9 @@ public class WorldChange extends Actor
     
     public void act()
     {
-        switch (endPoint){
+        String worldTarget = endPoint;
+        
+        switch (worldTarget){
             
             case "MyWorld":
                 Greenfoot.setWorld(new World1(x, y));

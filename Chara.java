@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chara extends Actor
 {
-    public static boolean touchingEdge = false;
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -78,17 +77,13 @@ public class Chara extends Actor
             }
         }
         
-        
+        //detects places to change world 
         if(isTouching(WorldChange.class)){
-            WorldChange a = new WorldChange();
-            a.toWorld(getX(), getY(), "MyWorld", 1);
+            System.out.println("s");
+            WorldChange.toWorld(getX(), 300, "MyWorld", 1);
         }
 
 
     }
     
-    public int getLocation()
-    {
-        return(getX() + getY());
-    }
 }
