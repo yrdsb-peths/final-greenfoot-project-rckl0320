@@ -15,8 +15,8 @@ public class Title extends World
      */
     public Title()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(816, 624, 1); 
+        // Create a new world with cells with a cell size of 1x1 pixels.
+        super(624, 560, 1); 
     }
 
     
@@ -24,7 +24,11 @@ public class Title extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {  
-            Greenfoot.setWorld(new MyWorld(1, 1));
+            MyWorld firstWorld = new MyWorld();
+            Chara player = new Chara();
+            firstWorld.addObject(player, getWidth()/2, 550);
+            
+            Greenfoot.setWorld(firstWorld);
         }
     }
 }
