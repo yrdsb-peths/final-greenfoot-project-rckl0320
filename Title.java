@@ -23,9 +23,8 @@ public class Title extends World
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
-        {
-            MyWorld gameStart = new MyWorld(1, 1);
-            Greenfoot.setWorld(gameStart);
+        {  
+            Greenfoot.setWorld(new MyWorld(1, 1));
         }
     }
 }

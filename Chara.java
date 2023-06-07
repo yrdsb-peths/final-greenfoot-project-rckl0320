@@ -15,24 +15,21 @@ public class Chara extends Actor
     public void act()
     {
         //Variables for collision detection
-        int tracker = 0;
+        
         int rotation1 = 1;
         int rotation2 = 1;
 
         
         //collision detector
         if(isTouching(Wall.class)){
-            tracker = 1;
             
             if(rotation1 == 1){
                 rotation1 = getRotation();
             }
         }
         else{
-            //if((getRotation() != 270) && (getRotation() != 90)){
             rotation1 = 1;
             rotation2 = 1;
-            //}
         }
         
         //Movement and collision input
@@ -79,10 +76,8 @@ public class Chara extends Actor
         
         //detects places to change world 
         if(isTouching(WorldChange.class)){
-            System.out.println("s");
-            WorldChange.toWorld(getX(), 300, "MyWorld", 1);
+            WorldChange.toWorld("World1", getX(), 300, 1);
         }
-
 
     }
     

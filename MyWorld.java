@@ -30,9 +30,5 @@ public class MyWorld extends World
         
     }
     
-    public void act()
-    {
-        
-    }
 
 }

@@ -18,7 +18,7 @@ public class WorldChange extends Actor
     static int y;
     static int selector;
     
-    public static void toWorld(int h, int v, String z, int a)
+    public static void toWorld(String z, int h, int v, int a)
     {
         x = h;
         y = v;
@@ -29,15 +29,16 @@ public class WorldChange extends Actor
     
     public void act()
     {
-        String worldTarget = endPoint;
-        
-        switch (worldTarget){
+        switch (endPoint){
             
-            case "MyWorld":
-                Greenfoot.setWorld(new World1(x, y));
-                break;
-        
             case "World1":
+                if(selector == 1){
+                    
+                    Greenfoot.setWorld(new World1(x, y));
+                    break;
+                }
+        
+            case "MyWorld":
                 if(selector == 1){
                     Greenfoot.setWorld(new MyWorld(x, y));
                     break;
