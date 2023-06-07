@@ -33,7 +33,6 @@ public class WorldChange extends Actor
             
             case "World1":
                 if(selector == 1){
-                    
                     Greenfoot.setWorld(new World1(x, y));
                     break;
                 }
@@ -43,7 +42,7 @@ public class WorldChange extends Actor
                     Greenfoot.setWorld(new MyWorld(x, y));
                     break;
                 }
-                break;
+                
 
         }
     }

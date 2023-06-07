@@ -18,8 +18,8 @@ public class World1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(816, 624, 1, true); 
         
-        Chara player1 = new Chara();
-        addObject(player1, 500, 200);
+        //Chara player1 = new Chara();
+        //addObject(player1, 500, 200);
         
         Wall w = new Wall();
         addObject(w, 400, 500);
