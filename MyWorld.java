@@ -22,7 +22,7 @@ public class MyWorld extends World
         addObject(player, getWidth()/2, 550);
         
         Wall wol = new Wall();
-        addObject(wol, 300, 250);
+        addObject(wol, 300, 100);
         
         WorldChange a = new WorldChange();
         addObject(a, getWidth()/2, 0); 

@@ -77,10 +77,20 @@ public class Chara extends Actor
         //detects places to change world 
         if(isTouching(WorldChange.class)){
             //WorldChange.toWorld("World1", getX(), 300, 1);
-            World1 wor = new World1(3, 5);
-            wor.addObject(this, 400, 400);
+            if(getWorld() instanceof MyWorld){
+                World1 wor = new World1(3, 5);
+                wor.addObject(this, wor.getWidth()/2, 550);
                     
-            Greenfoot.setWorld(wor);
+                Greenfoot.setWorld(wor);
+            }
+        
+            else if(getWorld() instanceof World1){
+                MyWorld worl = new MyWorld(3, 5);
+                
+                Greenfoot.setWorld(worl);
+                
+                this.setLocation(worl.getWidth()/2, 100);
+            }
         }
 
     }

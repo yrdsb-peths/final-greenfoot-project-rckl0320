@@ -22,10 +22,10 @@ public class World1 extends World
         //addObject(player1, 500, 200);
         
         Wall w = new Wall();
-        addObject(w, 400, 500);
+        addObject(w, 400, 200);
         
         WorldChange b = new WorldChange();
-        addObject(b, getWidth()/2, 10);
+        addObject(b, getWidth()/2, 624);
     }
     
 }
