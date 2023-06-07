@@ -74,26 +74,26 @@ public class Chara extends Actor
             }
         }
         
-        //detects places to change world 
+        //Allows world changes upon contact with WorldChange objects 
         if(isTouching(WorldChange.class)){
-            //WorldChange.toWorld("World1", getX(), 300, 1);
+            //allows travel to World1 from MyWorld
             if(getWorld() instanceof MyWorld){
                 World1 wor = new World1();
                 wor.addObject(this, wor.getWidth()/2, 500);
                     
                 Greenfoot.setWorld(wor);
             }
-        
+            
+            //allows travel back from World1 to MyWorld
             else if(getWorld() instanceof World1){
                 MyWorld worl = new MyWorld();
                 worl.addObject(this, worl.getWidth()/2, 60);
                 
                 Greenfoot.setWorld(worl);
-                
-                
             }
         }
-
+        
+        
     }
     
 }
