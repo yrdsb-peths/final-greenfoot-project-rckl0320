@@ -25,7 +25,7 @@ public class World1 extends World
         addObject(w, 400, 200);
         
         WorldChange b = new WorldChange();
-        addObject(b, getWidth()/2, 624);
+        addObject(b, getWidth()/2, 560);
     }
     
 }
