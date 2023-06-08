@@ -88,7 +88,7 @@ public class Scroller
      * @param dsy the requested distance to shift everything vertically
      */
     public void scroll(int dsx, int dsy)
-    {
+    { 
         // adjust scroll amounts and scroll background image
         if (limited)
         {
