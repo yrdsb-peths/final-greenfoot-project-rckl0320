@@ -16,7 +16,7 @@ public class World1 extends World
     public World1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(624, 560, 1, true); 
+        super(624, 560, 1, false); 
         
         //Chara player1 = new Chara();
         //addObject(player1, 500, 200);
