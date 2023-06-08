@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class World2 extends World
 {
-
+    Actor player;
+    Scroller scroller;
     /**
      * Constructor for objects of class World2.
      * 
@@ -16,5 +17,13 @@ public class World2 extends World
     public World2()
     {
         super(816, 624, 1);
+         
+        
+    }
+    public void act()
+    {
+        int x = player.getX() - 816/2;
+        int y = player.getY() - 624/2;
+        scroller.scroll(x, y);
     }
 }

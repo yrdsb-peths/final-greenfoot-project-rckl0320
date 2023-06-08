@@ -14,6 +14,15 @@ public class Chara extends Actor
      */
     public void act()
     {
+        collisionDetector();
+        worldChanger();
+        interaction();
+    }
+    /**
+     * Detects Collisions and controls movement
+     */
+    public void collisionDetector()
+    {
         //Variables for collision detection
         
         int rotation1 = 1;
@@ -73,11 +82,14 @@ public class Chara extends Actor
                 move(2);
             }
         }
-        
-        
-        
-        
-        
+    }
+    
+    
+    /**
+     * Allows switching between different worlds
+     */
+    public void worldChanger()
+    {
         //Allows world changes upon contact with WorldChange objects 
         if(isTouching(WorldChange.class)){
             
@@ -96,18 +108,19 @@ public class Chara extends Actor
                 
                 Greenfoot.setWorld(worl);
             }
-        }
-        
-        
-        
+        }   
+    }
+    
+    /**
+     * Allows for interaction between Character and objects
+     */
+    public void interaction()
+    {
         if(isTouching(Interaction.class)){
             if(Greenfoot.isKeyDown("z")){
                 //actions after the interaction
                 
             }
         }
-        
     }
-    
-
 }
