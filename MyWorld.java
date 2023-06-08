@@ -27,7 +27,8 @@ public class MyWorld extends World
         WorldChange a = new WorldChange();
         addObject(a, getWidth()/2, -10);
         
-        
+        Interaction sa = new Interaction();
+        addObject(sa, 400, 300);
         
     }
     

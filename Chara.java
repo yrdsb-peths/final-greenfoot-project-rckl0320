@@ -74,6 +74,10 @@ public class Chara extends Actor
             }
         }
         
+        
+        
+        
+        
         //Allows world changes upon contact with WorldChange objects 
         if(isTouching(WorldChange.class)){
             
@@ -95,6 +99,15 @@ public class Chara extends Actor
         }
         
         
+        
+        if(isTouching(Interaction.class)){
+            if(Greenfoot.isKeyDown("z")){
+                //actions after the interaction
+                
+            }
+        }
+        
     }
     
+
 }
