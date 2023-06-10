@@ -1,32 +1,45 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class World2 here.
+ * Modified "Actor following scrolling code" world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * @author danpost 
+ * 
  */
 public class WorldScroll extends World
 {
     public static final int WIDE = 800;
     public static final int HIGH = 600;
-    public static final int CELL = 1;
     
-    private Scroller scroller = null;
+    
+    Scroller scroller;
+    Actor scrollActor;
     
     public WorldScroll()
     {
-        super(WIDE, HIGH, CELL, false);
-        scroller = new Scroller(this, null);
+        super(WIDE, HIGH, 1, false);
+        GreenfootImage bg = new GreenfootImage("bg.png");
+        int bgWide = bg.getWidth();
+        int bgHigh = bg.getHeight();
+        scroller = new Scroller(this, bg, bgWide, bgHigh);
+        scrollActor = new Chara();
+        addObject(scrollActor, bgWide/2, bgHigh/2);
+        scroll();
+        
         
     }
     public void act()
     {
-        scroll();
+        if(scrollActor != null){
+            scroll();
+        }
     }
     
     private void scroll()
     {
-        scroller.scroll(800, 600);
+        int dsx = scrollActor.getX() - WIDE/2;
+        int dsy = scrollActor.getY() - HIGH/2;
+        scroller.scroll(dsx, dsy);
     }
 }
