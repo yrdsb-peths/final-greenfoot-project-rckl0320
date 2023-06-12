@@ -96,15 +96,15 @@ public class Chara extends Actor
             //allows travel to World1 from MyWorld
             if(getWorld() instanceof MyWorld){
                 World1 wor = new World1();
-                wor.addObject(this, wor.getWidth()/2, 500);
+                //wor.addObject(this, wor.getWidth()/2, 500);
                     
                 Greenfoot.setWorld(wor);
             }
             
             //allows travel back from World1 to MyWorld
             else if(getWorld() instanceof World1){
-                MyWorld worl = new MyWorld();
-                worl.addObject(this, worl.getWidth()/2, 55);
+                MyWorld worl = new MyWorld(1);
+                //worl.addObject(this, worl.getWidth()/2, 55);
                 
                 Greenfoot.setWorld(worl);
             }

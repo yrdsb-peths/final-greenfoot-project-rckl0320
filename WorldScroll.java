@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * 
  * @author danpost 
- * 
+ * Modified by Rick
  */
 public class WorldScroll extends World
 {

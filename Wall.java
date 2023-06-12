@@ -16,5 +16,5 @@ public class Wall extends Actor
     {
         
     }
-    public void setLocation(int x, int y){}
+    //public void setLocation(int x, int y){}
 }

@@ -10,27 +10,59 @@ public class MyWorld extends World
 {
 
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for scrolling variables and objects.
      * 
      */
-    public MyWorld()
+    public static final int WIDE = 800;
+    public static final int HIGH = 600;
+    
+    
+    
+    Scroller scroller;
+    Actor scrollActor;
+    
+    public MyWorld(int firstTime)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(624, 560, 1, false);
+        super(WIDE, HIGH, 1, false);
+        GreenfootImage bg = new GreenfootImage("bg.png");
+        int bgWide = bg.getWidth();
+        int bgHigh = bg.getHeight();
+        scroller = new Scroller(this, bg, bgWide, bgHigh);
+        scrollActor = new Chara();
+        if(firstTime == 0){
+             addObject(scrollActor, bgWide/2, 550);    
+        }
+        else{
+             addObject(scrollActor, bgWide/2, 70);
+        }
+        scroll();
         
-        //Chara player = new Chara();
-        //addObject(player, getWidth()/2, 550);
+    
         
         Wall wol = new Wall();
-        addObject(wol, 200, 100);
+        addObject(wol, getWidth()/2, 200);
         
         WorldChange a = new WorldChange();
         addObject(a, getWidth()/2, 0);
         
-        Interaction sa = new Interaction();
-        addObject(sa, 400, 300);
+        //Interaction sa = new Interaction();
+        //addObject(sa, 400, 300);
         
     }
     
+    public void act()
+    {
+        if(scrollActor != null){
+            scroll();
+        }
+    }
+    
+    private void scroll()
+    {
+        int dsx = scrollActor.getX() - WIDE/2;
+        int dsy = scrollActor.getY() - HIGH/2;
+        scroller.scroll(dsx, dsy);
+    }
 
 }
