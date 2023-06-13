@@ -30,24 +30,25 @@ public class MyWorld extends World
         int bgHigh = bg.getHeight();
         scroller = new Scroller(this, bg, bgWide, bgHigh);
         scrollActor = new Chara();
+        
         if(firstTime == 0){
-             addObject(scrollActor, bgWide/2, 550);    
+            addObject(scrollActor, bgWide/2, 550);    
         }
         else{
-             addObject(scrollActor, bgWide/2, 70);
+            addObject(scrollActor, bgWide/2, 70);
         }
         scroll();
         
     
-        
+        //Objects in the world
         Wall wol = new Wall();
         addObject(wol, getWidth()/2, 200);
         
         WorldChange a = new WorldChange();
         addObject(a, getWidth()/2, 0);
         
-        //Interaction sa = new Interaction();
-        //addObject(sa, 400, 300);
+        Interaction sa = new Interaction();
+        addObject(sa, 400, 300);
         
     }
     
