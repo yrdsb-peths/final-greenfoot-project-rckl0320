@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Wall here.
+ * Class for all objects with collision mechanics
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Rick
+ * 
  */
 public class Wall extends Actor
 {

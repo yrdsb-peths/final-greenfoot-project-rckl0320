@@ -110,12 +110,20 @@ public class Chara extends Actor
         //Allows world changes upon contact with WorldChange objects 
         if(isTouching(WorldChange.class)){
             
+            for(int i=0; i < 255;i++){
+                
+            }
             //allows travel to World1 from MyWorld
             if(getWorld() instanceof Forest){
+                FadeScreen x = new FadeScreen(); 
+                getWorld().addObject(x, 400, 300); 
+                
+                x.fadeIn();
                 World1 wor = new World1();
                 //wor.addObject(this, wor.getWidth()/2, 500);
-                    
+                wor.addObject(x, 400, 300);    
                 Greenfoot.setWorld(wor);
+                x.fadeOut();
             }
             
             //allows travel back from World1 to MyWorld

@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Allows for interaction with objects(actors), with collision mechanics
+ * Write a description of class Tree here.
  * 
- * @author Rick
- * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Interaction extends Wall
+public class Tree extends Wall
 {
     /**
-     * Act - do whatever the Interaction wants to do. This method is called whenever
+     * Act - do whatever the Tree wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
