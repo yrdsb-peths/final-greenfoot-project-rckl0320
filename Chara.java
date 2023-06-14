@@ -31,7 +31,7 @@ public class Chara extends Actor
         int rotation2 = 1;
         int posX = 0;
         int posY = 0;
-        
+        int speed = 3;
         
         //collision detector
         if(isTouching(Wall.class)){
@@ -54,7 +54,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
             
             if(rotation2 != rotation1){
-                move(2);
+                move(speed);
             }
             else if(rotation2 == rotation1){
                 setLocation(posX, posY);
@@ -67,7 +67,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
 
             if(rotation2 != rotation1){   
-                move(2);
+                move(speed);
             }
             else if(rotation2 == rotation1){
                 setLocation(posX, posY);
@@ -79,7 +79,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
 
             if(rotation2 != rotation1){
-                move(2);
+                move(speed);
             }
             else if(rotation2 == rotation1){
                 setLocation(posX, posY);
@@ -93,7 +93,7 @@ public class Chara extends Actor
             rotation2 = getRotation();
 
             if(rotation2 != rotation1){            
-                move(2);
+                move(speed);
             }
             else if(rotation2 == rotation1){
                 setLocation(posX, posY);
