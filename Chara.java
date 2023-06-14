@@ -5,6 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Rick L 
  * @version June 2023
+ * 
  */
 public class Chara extends Actor
 {
