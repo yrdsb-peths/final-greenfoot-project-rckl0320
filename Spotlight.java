@@ -1,0 +1,36 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Spotlight here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Spotlight extends Actor
+{
+    /**
+     * Act - do whatever the Spotlight wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        //IF NEED TO ADD SPOTLIGHT TO WORLD COPY CODE
+        
+        
+        //Actor lightCircle;
+        
+        
+        //PUBLIC WORLD:
+        
+        //lightCircle = new Spotlight();
+        //addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
+        
+        
+        //ACT
+        
+        //if(scrollActor != null){
+            //scroll();
+            //lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);   
+        //}
+    }
+}

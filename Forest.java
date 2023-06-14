@@ -20,6 +20,7 @@ public class Forest extends World
     
     Scroller scroller;
     Actor scrollActor;
+    Actor lightCircle;
     
     public Forest(int firstTime)
     {    
@@ -50,12 +51,19 @@ public class Forest extends World
         Interaction sa = new Interaction();
         addObject(sa, 400, 300);
         
+        lightCircle = new Spotlight();
+        addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
+        
+    
+        
+        
     }
     
     public void act()
     {
         if(scrollActor != null){
             scroll();
+            lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);   
         }
     }
     
