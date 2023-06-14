@@ -110,7 +110,7 @@ public class Chara extends Actor
         if(isTouching(WorldChange.class)){
             
             //allows travel to World1 from MyWorld
-            if(getWorld() instanceof MyWorld){
+            if(getWorld() instanceof Forest){
                 World1 wor = new World1();
                 //wor.addObject(this, wor.getWidth()/2, 500);
                     
@@ -119,7 +119,7 @@ public class Chara extends Actor
             
             //allows travel back from World1 to MyWorld
             else if(getWorld() instanceof World1){
-                MyWorld worl = new MyWorld(1);
+                Forest worl = new Forest(1);
                 //worl.addObject(this, worl.getWidth()/2, 100);
                 
                 Greenfoot.setWorld(worl);
