@@ -37,9 +37,24 @@ public class Title extends World
             
         }
         
-        if(Greenfoot.isKeyDown("x")){
+        menuOpening();
+
+    }
+    public void menuOpening()
+    {
+        boolean isOpen = false;
+        Actor mn;
+        if(Greenfoot.isKeyDown("x") && isOpen == false){
             MenuSelector slc = new MenuSelector();
+            mn = slc;
             addObject(slc, 100, 100);
+            isOpen = true;
+            //removes duplicates
+            if(getObjects(MenuSelector.class).size() == 2){
+                removeObject(getObjects(MenuSelector.class).get(1));
+            }
         }
+        
+      
     }
 }
