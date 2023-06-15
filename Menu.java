@@ -15,7 +15,7 @@ public class Menu extends Actor
     int selectorY;
     public void act()
     {
-        getWorld().addObject(new MenuSelector(), 100, 100);
+        
         
         //Selection detection for menu
         switch(selectorY){

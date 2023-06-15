@@ -14,22 +14,37 @@ public class MenuSelector extends Actor
      */
     int sy = 100;
     int fx = 100; //position of menu options, fixed
+    boolean isOn = true;
     public void act()
     {
         sy = 100;
+        if(isOn){
+            sy = getY();
+        }
         if(sy == 100){
                 System.out.println("100");
                 if(Greenfoot.isKeyDown("Up")){
                     setLocation(fx, 500);
                     sy = 500;
                     System.out.println("up1");
-                    
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                        
+                    }
                 }
                 if(Greenfoot.isKeyDown("Down")){
                     setLocation(fx, 200);
                     sy = 200;
                     System.out.println("down1");
-                   
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
         }          
         else if(sy == 200){
@@ -37,12 +52,22 @@ public class MenuSelector extends Actor
                 if(Greenfoot.isKeyDown("Up")){
                     setLocation(fx, 100);
                     sy = getY();
-                   
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
                 if(Greenfoot.isKeyDown("Down")){
                     setLocation(fx, 300);
                     sy = getY();
-                
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
         }
         else if(sy == 300){
@@ -50,12 +75,22 @@ public class MenuSelector extends Actor
                 if(Greenfoot.isKeyDown("Up")){
                     setLocation(fx, 200);
                     sy = getY();
-                
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
                 if(Greenfoot.isKeyDown("Down")){
                     setLocation(fx, 500);
                     sy = getY();
-    
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
         }    
         
@@ -64,13 +99,26 @@ public class MenuSelector extends Actor
                 if(Greenfoot.isKeyDown("Up")){
                     setLocation(fx, 300);
                     sy = getY();
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
                 if(Greenfoot.isKeyDown("Down")){
                     setLocation(fx, 100);
                     sy = getY();
+                    try{
+                        Thread.sleep(50);
+                    }
+                    catch (InterruptedException x){
+                        Thread.currentThread().interrupt();
+                    }
                 }
            
                 
         }
+           
     }
 }
