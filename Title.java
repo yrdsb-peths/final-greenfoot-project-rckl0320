@@ -27,12 +27,19 @@ public class Title extends World
             Forest firstWorld = new Forest(0);
             //Chara player = new Chara();
             //firstWorld.addObject(player, getWidth()/2, 550);
-            FadeScreen x = new FadeScreen(); 
-            firstWorld.addObject(x, 400, 300); 
-                
             
+            //FadeScreen x = new FadeScreen(); 
+            //firstWorld.addObject(x, 400, 300);
+            
+            
+                    
             Greenfoot.setWorld(firstWorld);
             
+        }
+        
+        if(Greenfoot.isKeyDown("x")){
+            MenuSelector slc = new MenuSelector();
+            addObject(slc, 100, 100);
         }
     }
 }

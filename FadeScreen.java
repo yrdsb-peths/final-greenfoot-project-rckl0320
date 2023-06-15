@@ -14,7 +14,7 @@ public class FadeScreen extends Actor
      */
     public void act()
     {
-        getImage().setTransparency(100);
+        getImage().setTransparency(0);
     }
     
     public void fadeIn()
@@ -23,7 +23,7 @@ public class FadeScreen extends Actor
             
             getImage().setTransparency(i);
             try{
-                Thread.sleep(1);
+                Thread.sleep(10);
             }
             catch (InterruptedException x){
                 Thread.currentThread().interrupt();
