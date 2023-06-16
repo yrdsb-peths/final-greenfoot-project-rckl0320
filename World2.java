@@ -16,6 +16,7 @@ public class World2 extends World
     
     Actor scrollActor;
     Actor lightCircle;
+    Ghost ko = new Ghost();
     public World2()
     {
         super(800, 600, 1, true);
@@ -24,15 +25,15 @@ public class World2 extends World
         addObject(scrollActor, 400, 500);
         lightCircle = new Spotlight();
         addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
+        
+        addObject(ko, 100, 100);
     }
     public void act()
     {
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80); 
-        
-        
-        Ghost ko = new Ghost();
-        addObject(ko, 100, 100);
-        
+        if(getObjects(Ghost.class).isEmpty()){
+            addObject(ko, scrollActor.getX() - 50, scrollActor.getY() + 142);
+        }
     }
     
 

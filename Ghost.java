@@ -27,10 +27,10 @@ public class Ghost extends Actor
     {
         if(!getObjectsInRange(500, Chara.class).isEmpty()){
             Actor plc = getObjectsInRange(500, Chara.class).get(0);
-        
+            
             
             turnTowards(plc.getX(), plc.getY());
-            move(1);
+            move(2);
             
         }
     }
