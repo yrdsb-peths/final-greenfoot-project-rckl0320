@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Goblin here.
+ * Chases the player
  * 
- * @author (your name) 
+ * @author Rick
  * @version (a version number or a date)
  */
 public class Ghost extends Actor

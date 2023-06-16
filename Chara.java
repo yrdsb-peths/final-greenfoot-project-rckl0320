@@ -20,7 +20,7 @@ public class Chara extends Actor
         worldChanger();
         interaction();
         GreenfootImage cr = getImage();
-        cr.scale(64, 64);
+        cr.scale(48, 48);
     }
     /**
      * Detects Collisions and controls movement
@@ -33,7 +33,7 @@ public class Chara extends Actor
         int rotation2 = 1;
         int posX = 0;
         int posY = 0;
-        int speed = 2;
+        int speed = 4;
         
         //collision detector
         if(isTouching(Wall.class)){
@@ -141,5 +141,15 @@ public class Chara extends Actor
         if(isTouching(Ghost.class)){
             removeTouching(Ghost.class);
         }
+    }
+    
+    GreenfootImage[] ch = new GreenfootImage[4];
+    public void death(){
+        for(int i=0; i<ch.length; i++)
+        {
+            ch[i] = new GreenfootImage("images/dth/death" + i + ".png");
+
+        }
+        setImage(ch[0]);
     }
 }

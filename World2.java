@@ -11,9 +11,7 @@ public class World2 extends World
 {
     public static final int WIDE = 800;
     public static final int HIGH = 600;
-    
-    
-    
+    public int lives = 3;
     Actor scrollActor;
     Actor lightCircle;
     Ghost ko = new Ghost();
@@ -23,16 +21,24 @@ public class World2 extends World
         
         scrollActor = new Chara();
         addObject(scrollActor, 400, 500);
+        addObject(ko, 100, 100);
+        Well udgw = new Well();
+        addObject(udgw, 700, 500);
+        
         lightCircle = new Spotlight();
         addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
         
-        addObject(ko, 100, 100);
+        
     }
     public void act()
     {
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80); 
         if(getObjects(Ghost.class).isEmpty()){
-            addObject(ko, scrollActor.getX() - 50, scrollActor.getY() + 142);
+            addObject(ko, 100, 300);
+            lives -= 1;
+        }
+        if(lives == 0){
+            scrollActor.death();
         }
     }
     
