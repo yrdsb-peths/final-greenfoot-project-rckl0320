@@ -24,10 +24,10 @@ public class Title extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {  
-            Forest firstWorld = new Forest();
+            TipsScreen tps = new TipsScreen();
                 
                     
-            Greenfoot.setWorld(firstWorld);
+            Greenfoot.setWorld(tps);
             
         }
         

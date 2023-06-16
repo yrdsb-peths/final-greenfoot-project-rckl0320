@@ -13,30 +13,15 @@ public class Menu extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int selectorY;
+    public Menu(){
+        
+    }
     public void act()
     {
         
-        
+        Label inv = new Label("ITEMS", 50);
+        getWorld().addObject(inv, 180, 90);
         //Selection detection for menu
-        switch(selectorY){
-            case 100:
-                if(Greenfoot.isKeyDown("z")){
-                    
-                }
-                break;
-                
-            case 200:
-                if(Greenfoot.isKeyDown("z")){
-                    
-                }
-                break;
-            
-            case 300:
-                if(Greenfoot.isKeyDown("z")){
-                    
-                }
-                break;
-            
-        }
+        
     }
 }
