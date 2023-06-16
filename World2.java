@@ -18,7 +18,7 @@ public class World2 extends World
     Actor lightCircle;
     public World2()
     {
-        super(WIDE, HIGH, 1, false);
+        super(WIDE, HIGH, 1, true);
         GreenfootImage bg = new GreenfootImage("arena.png");
         int bgWide = bg.getWidth();
         int bgHigh = bg.getHeight();
