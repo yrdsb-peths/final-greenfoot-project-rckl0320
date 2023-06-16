@@ -29,8 +29,6 @@ public class Forest extends World
         int bgHigh = bg.getHeight();
         scroller = new Scroller(this, bg, bg.getWidth(), bg.getHeight());
         scrollActor = new Chara();
-
-       
         addObject(scrollActor, 400, 600);    
         
         
@@ -38,12 +36,10 @@ public class Forest extends World
 
         //Objects in the world
             
-        
         Well a = new Well();
         addObject(a, getWidth()/2, 100);
 
-        
-        
+
         prepare();
     }
 

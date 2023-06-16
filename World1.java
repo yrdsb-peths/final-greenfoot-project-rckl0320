@@ -17,7 +17,7 @@ public class World1 extends World
     public World1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1);
         for(int i=0; i<bg.length; i++)
         {
             bg[i] = new GreenfootImage("images/well_bg/well" + i + ".png");

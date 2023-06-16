@@ -8,21 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TipsScreen extends World
 {
-
+    SimpleTimer TipDelay = new SimpleTimer();
     /**
      * Constructor for objects of class TipsScreen.
      * 
      */
     public TipsScreen()
-    {    
+    {   
+        
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+        TipDelay.mark();
     }
     public void act(){
-        if(Greenfoot.isKeyDown("space")){
-            Forest firstWorld = new Forest();           
-            Greenfoot.setWorld(firstWorld);
+        
+        if(TipDelay.millisElapsed() < 2000){
+            return;
         }
+        TipDelay.mark();
+        Forest firstWorld = new Forest();           
+        Greenfoot.setWorld(firstWorld);
+        
     }
 }

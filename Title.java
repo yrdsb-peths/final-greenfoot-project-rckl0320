@@ -24,9 +24,7 @@ public class Title extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {  
-            TipsScreen tps = new TipsScreen();
-                
-                    
+            TipsScreen tps = new TipsScreen();      
             Greenfoot.setWorld(tps);
             
         }
