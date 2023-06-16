@@ -30,7 +30,7 @@ public class World2 extends World
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80); 
         
         
-        Goblin ko = new Goblin(scrollActor.getX(), scrollActor.getY());
+        Ghost ko = new Ghost();
         addObject(ko, 100, 100);
         
     }

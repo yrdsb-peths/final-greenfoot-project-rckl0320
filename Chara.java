@@ -138,5 +138,8 @@ public class Chara extends Actor
                 
             }
         }
+        if(isTouching(Ghost.class)){
+            removeTouching(Ghost.class);
+        }
     }
 }

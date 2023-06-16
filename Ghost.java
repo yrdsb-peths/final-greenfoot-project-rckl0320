@@ -12,24 +12,26 @@ public class Ghost extends Actor
      * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int cx;
-    int cy;
-    public Ghost(int x, int y){
-        cx = x;
-        cy = y;
+    
+    public Ghost(){
+        
     }
     public void act()
     {
         GreenfootImage cr = getImage();
         cr.scale(64, 64);
-        
+        roam();
     }
     
     public void roam()
     {
-        if(getObjectsInRange(500, Chara.class) != isEmpty){
-            turnTowards(cx, cy);
-            move(3);
+        if(!getObjectsInRange(500, Chara.class).isEmpty()){
+            Actor plc = getObjectsInRange(500, Chara.class).get(0);
+        
+            
+            turnTowards(plc.getX(), plc.getY());
+            move(1);
+            
         }
     }
 }
