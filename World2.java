@@ -53,7 +53,9 @@ public class World2 extends World
         addObject(tmsc, 100, 100);
         if(scoreCounter.millisElapsed() == 1000){
             z += 1;
+            tmsc.setValue(z);
         }
+        
         scoreCounter.mark();
         
         
