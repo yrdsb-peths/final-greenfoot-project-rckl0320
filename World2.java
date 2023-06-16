@@ -49,15 +49,16 @@ public class World2 extends World
     }
     public void timerScore(){
         int z = 0;
-        Label tmsc = new Label(z, 55);
+        Label tmsc = new Label(z, 75);
         addObject(tmsc, 100, 100);
-        if(scoreCounter.millisElapsed() == 1000){
+        while(!getObjects(Chara.class).isEmpty()){
+            if(scoreCounter.millisElapsed() < 1000){
+                return;
+            }
             z += 1;
             tmsc.setValue(z);
+            scoreCounter.mark();
         }
-        
-        scoreCounter.mark();
-        
         
         
     }
