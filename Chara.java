@@ -14,6 +14,7 @@ public class Chara extends Actor
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act()
     {
         collisionDetector();
@@ -21,6 +22,7 @@ public class Chara extends Actor
         interaction();
         GreenfootImage cr = getImage();
         cr.scale(48, 48);
+        
     }
     /**
      * Detects Collisions and controls movement

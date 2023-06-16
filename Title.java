@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Title extends World
 {
-
+    SimpleTimer delay = new SimpleTimer();
     /**
      * Constructor for objects of class Title.
      * 
@@ -17,13 +17,17 @@ public class Title extends World
     {    
         // Create a new world with cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
+        delay.mark();
     }
 
     
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
-        {  
+        {
+            if(delay.millisElapsed() < 1000){
+            return;
+            }
             TipsScreen tps = new TipsScreen();      
             Greenfoot.setWorld(tps);
             
