@@ -23,7 +23,7 @@ public class Forest extends World
     public Forest()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(WIDE, HIGH, 1, true);
+        super(WIDE, HIGH, 1, false);
         GreenfootImage bg = new GreenfootImage("open background.png");
         int bgWide = bg.getWidth();
         int bgHigh = bg.getHeight();
