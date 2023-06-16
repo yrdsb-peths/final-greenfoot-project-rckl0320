@@ -19,6 +19,8 @@ public class Chara extends Actor
         collisionDetector();
         worldChanger();
         interaction();
+        GreenfootImage cr = getImage();
+        cr.scale(64, 64);
     }
     /**
      * Detects Collisions and controls movement
@@ -51,6 +53,7 @@ public class Chara extends Actor
         //Movement and collision input
         if (Greenfoot.isKeyDown("up")){
             setRotation(270);
+            
             rotation2 = getRotation();
             
             if(rotation2 != rotation1){
