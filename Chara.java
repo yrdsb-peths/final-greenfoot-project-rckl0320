@@ -31,7 +31,7 @@ public class Chara extends Actor
         int rotation2 = 1;
         int posX = 0;
         int posY = 0;
-        int speed = 3;
+        int speed = 2;
         
         //collision detector
         if(isTouching(Wall.class)){
@@ -110,23 +110,9 @@ public class Chara extends Actor
         //Allows world changes upon contact with WorldChange objects 
         if(isTouching(WorldChange.class)){
             
-            
-            //allows travel to World1 from MyWorld
-            if(getWorld() instanceof Forest){
-                //FadeScreen x = new FadeScreen(); 
-                //getWorld().addObject(x, 400, 300); 
-                
-                //x.fadeIn();
-                World1 wor = new World1();
-                //wor.addObject(this, wor.getWidth()/2, 500);
-                //wor.addObject(x, 400, 300);    
-                Greenfoot.setWorld(wor);
-                //x.fadeOut();
-            }
-            
-            //allows travel back from World1 to MyWorld
-            else if(getWorld() instanceof World1){
-                Forest worl = new Forest(1);
+            //allows travel back from World1 to World2
+            if(getWorld() instanceof World1){
+                World2 worl = new World2();
                 //worl.addObject(this, worl.getWidth()/2, 100);
                 
                 Greenfoot.setWorld(worl);
@@ -139,9 +125,13 @@ public class Chara extends Actor
      */
     public void interaction()
     {
-        if(isTouching(Interaction.class)){
+        if(isTouching(Well.class)){
             if(Greenfoot.isKeyDown("z")){
-                //actions after the interaction
+                
+                World1 wor = new World1();
+                wor.addObject(this, wor.getWidth()/2, 590);
+               
+                Greenfoot.setWorld(wor);
                 
             }
         }

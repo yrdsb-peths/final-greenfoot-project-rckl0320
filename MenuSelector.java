@@ -13,7 +13,7 @@ public class MenuSelector extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int sy = 100;
-    int fx = 100; //horizontal position of menu options, fixed
+    int fx = 200; //horizontal position of menu options, fixed
     boolean isOn = true;
     public void act()
     {
@@ -29,7 +29,7 @@ public class MenuSelector extends Actor
                 sy = getY();
                     
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     Thread.currentThread().interrupt();
@@ -41,7 +41,7 @@ public class MenuSelector extends Actor
                 sy = getY();
                     
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     
@@ -56,7 +56,7 @@ public class MenuSelector extends Actor
                 setLocation(fx, 100);
                 sy = getY();
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     Thread.currentThread().interrupt();
@@ -67,7 +67,7 @@ public class MenuSelector extends Actor
                 setLocation(fx, 300);
                 sy = getY();
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     Thread.currentThread().interrupt();
@@ -75,31 +75,6 @@ public class MenuSelector extends Actor
                 }
             }
         }
-        else if(sy == 300){
-                
-            if(Greenfoot.isKeyDown("Up")){
-                setLocation(fx, 200);
-                sy = getY();
-                try{
-                    Thread.sleep(100);
-                }
-                catch (InterruptedException x){
-                    Thread.currentThread().interrupt();
-                    setLocation(fx, 200);
-                }
-            }
-            if(Greenfoot.isKeyDown("Down")){
-                setLocation(fx, 500);
-                sy = getY();
-                try{
-                    Thread.sleep(100);
-                }
-                catch (InterruptedException x){
-                    Thread.currentThread().interrupt();
-                    setLocation(fx, 500);
-                }
-            }
-        }    
         
         else if(sy == 500){
                 
@@ -107,7 +82,7 @@ public class MenuSelector extends Actor
                 setLocation(fx, 300);
                 sy = getY();
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     Thread.currentThread().interrupt();
@@ -118,7 +93,7 @@ public class MenuSelector extends Actor
                 setLocation(fx, 100);
                 sy = getY();
                 try{
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 }
                 catch (InterruptedException x){
                     Thread.currentThread().interrupt();

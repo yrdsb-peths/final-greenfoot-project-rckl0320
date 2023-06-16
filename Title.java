@@ -24,14 +24,8 @@ public class Title extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {  
-            Forest firstWorld = new Forest(0);
-            //Chara player = new Chara();
-            //firstWorld.addObject(player, getWidth()/2, 550);
-            
-            //FadeScreen x = new FadeScreen(); 
-            //firstWorld.addObject(x, 400, 300);
-            
-            
+            Forest firstWorld = new Forest();
+                
                     
             Greenfoot.setWorld(firstWorld);
             
@@ -45,9 +39,12 @@ public class Title extends World
         boolean isOpen = false;
         Actor mn;
         if(Greenfoot.isKeyDown("x") && isOpen == false){
+            Menu sa = new Menu();
+            addObject(sa, 400, 300);
             MenuSelector slc = new MenuSelector();
             mn = slc;
-            addObject(slc, 100, 100);
+            addObject(slc, 179, 89);
+            setActOrder(Menu.class, MenuSelector.class);
             isOpen = true;
             //removes duplicates
             if(getObjects(MenuSelector.class).size() == 2){
