@@ -87,9 +87,14 @@ public class World2 extends World
             Ghost ke = new Ghost();
             removeObject(lightCircle);
             removeObject(tmsc);
+            removeObject(hp1);
+            removeObject(hp2);
+            removeObject(hp3);
             addObject(ke, rdm.nextInt(800), rdm.nextInt(600));
             addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
             addObject(tmsc, 75, 50);
+            
+            addHearts();
             
         }
         if(z % 2000 == 0){
@@ -112,6 +117,22 @@ public class World2 extends World
             Greenfoot.setWorld(gmov);
         }
     }
-    
+    public void addHearts()
+    {
+        if(Chara.lives == 3){
+            addObject(hp1, 650, 50);
+            addObject(hp2, 700, 50);
+            addObject(hp3, 750, 50);
+        }
+        if(Chara.lives == 2){
+            addObject(hp1, 650, 50);
+            addObject(hp2, 700, 50);
+            
+        }
+        if(Chara.lives == 1){
+            addObject(hp1, 650, 50);
+        
+        }
+    }
     
 }
