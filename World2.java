@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Modified "Actor following scrolling code" world
+ * Main game world
  * 
- * 
- * @author danpost 
- * Modified by Rick
+ * Avoid the ghost for as long as you can
+ *  
+ * @author Rick
  */
 public class World2 extends World
 {
@@ -19,14 +19,19 @@ public class World2 extends World
     SimpleTimer scoreCounter = new SimpleTimer();
     int z = 0;
     Label tmsc;
+    //number of ghosts
+    int ghostNum = 1;
+    
     public World2()
     {
         super(800, 600, 1, true);
         scoreCounter.mark();
         
-       
+        //Player character
         scrollActor = new Chara();
         addObject(scrollActor, 400, 500);
+        
+        
         addObject(ko, 100, 100);
         Well udgw = new Well();
         addObject(udgw, 700, 500);
@@ -42,20 +47,21 @@ public class World2 extends World
     public void act()
     {
         //timer
-        if(scoreCounter.millisElapsed() == 1000){
-            timerScore();
-        }
+        
+        timerScore();
+        
         scoreCounter.mark(); 
         
         //Sets light circle to follow actor
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);
         
-        //Respawns Ghost 
-        if(getObjects(Ghost.class).isEmpty()){
+        //Respawns Ghost
+        int ghostNum = 1;
+        if(getObjects(Ghost.class).size() == ghostNum - 1){
+            lives--;
             addObject(ko, 100, 300);
-            lives -= 1;
+            ghostNum++;
         }
-        
         //Ends game when lives run out
         if(lives == 0){
             //Chara.death();
@@ -64,8 +70,14 @@ public class World2 extends World
         }
     }
     public void timerScore(){
-        z += 1;
+        z++;
         tmsc.setValue(z);
+        if(z % 1000 == 0)
+        {
+            Ghost ke = new Ghost();
+            addObject(ke, 500, 500);
+            ghostNum++;
+        }
         
     }
     

@@ -13,13 +13,12 @@ public class Ghost extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Ghost(){
-        
-    }
+    int spd = 2;
     public void act()
     {
         GreenfootImage cr = getImage();
         cr.scale(64, 64);
+        
         roam();
     }
     
@@ -30,7 +29,7 @@ public class Ghost extends Actor
             
             
             turnTowards(plc.getX(), plc.getY());
-            move(2);
+            move(spd);
             
         }
     }
