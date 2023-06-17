@@ -33,14 +33,18 @@ public class World2 extends World
         scrollActor = new Chara();
         addObject(scrollActor, 400, 500);
         
+        //First ghost
         Ghost ko = new Ghost();
         addObject(ko, 100, 100);
+        
+        
         Well udgw = new Well();
         addObject(udgw, 700, 500);
         
+        //light overlay        
         lightCircle = new Spotlight();
         addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
-        
+        //score counter
         tmsc = new Label(z, 75);
         addObject(tmsc, 100, 100);
     
