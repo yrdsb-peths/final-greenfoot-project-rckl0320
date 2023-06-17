@@ -95,7 +95,10 @@ public class World2 extends World
         if(z % 500 == 0)
         {
             Ghost ke = new Ghost();
+            removeObject(lightCircle);
+            
             addObject(ke, rdm.nextInt(800), rdm.nextInt(600));
+            addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
             ghostNum++;
         }
         if(z % 2000 == 0){
