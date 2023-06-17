@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Random;
 /**
  * Main game world
  * 
@@ -27,10 +27,11 @@ public class World2 extends World
     int ghostNum = 1;
     //Health
     //hp bar
-        Hearts hp1 = new Hearts();
-        Hearts hp2 = new Hearts();
-        Hearts hp3 = new Hearts();
-        
+    Hearts hp1 = new Hearts();
+    Hearts hp2 = new Hearts();
+    Hearts hp3 = new Hearts();
+    
+    Random rdm = new Random();
     public World2()
     {
         super(800, 600, 1, true);
@@ -77,7 +78,9 @@ public class World2 extends World
         int ghostNum = 1;
         if(getObjects(Ghost.class).size() == ghostNum - 1){
             Ghost ka = new Ghost();
-            addObject(ka, 100, 300);
+            removeObject(lightCircle);
+            addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
+            addObject(ka, rdm.nextInt(800), rdm.nextInt(600));
             ghostNum++;
         }
         loseLife();
@@ -91,7 +94,7 @@ public class World2 extends World
         if(z % 500 == 0)
         {
             Ghost ke = new Ghost();
-            addObject(ke, 500, 500);
+            addObject(ke, rdm.nextInt(800), rdm.nextInt(600));
             ghostNum++;
         }
         if(z % 2000 == 0){
