@@ -23,9 +23,6 @@ public class World2 extends World
     int z = 0;
     Label tmsc;
     
-    //number of ghosts
-    int ghostNum = 1;
-    //Health
     //hp bar
     Hearts hp1 = new Hearts();
     Hearts hp2 = new Hearts();
@@ -47,7 +44,7 @@ public class World2 extends World
         
         
         Well udgw = new Well();
-        addObject(udgw, 700, 500);
+        addObject(udgw, 400, 300);
         
         //light overlay        
         lightCircle = new Spotlight();
@@ -74,16 +71,8 @@ public class World2 extends World
         //Sets light circle to follow actor
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);
         
-        //Respawns Ghost
-        int ghostNum = 1;
-        if(getObjects(Ghost.class).size() == ghostNum - 1){
-            Ghost ka = new Ghost();
-            removeObject(lightCircle);
-            
-            addObject(ka, rdm.nextInt(800), rdm.nextInt(600));
-            addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
-            ghostNum++;
-        }
+        
+        
         loseLife();
     }
     /**
@@ -92,14 +81,16 @@ public class World2 extends World
     public void timerScore(){
         z++;
         tmsc.setValue(z);
+        //spawns new ghosts
         if(z % 500 == 0)
         {
             Ghost ke = new Ghost();
             removeObject(lightCircle);
-            
+            removeObject(tmsc);
             addObject(ke, rdm.nextInt(800), rdm.nextInt(600));
             addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
-            ghostNum++;
+            addObject(tmsc, 75, 50);
+            
         }
         if(z % 2000 == 0){
             Ghost.spd++;
