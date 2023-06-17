@@ -79,8 +79,9 @@ public class World2 extends World
         if(getObjects(Ghost.class).size() == ghostNum - 1){
             Ghost ka = new Ghost();
             removeObject(lightCircle);
-            addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
+            
             addObject(ka, rdm.nextInt(800), rdm.nextInt(600));
+            addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
             ghostNum++;
         }
         loseLife();
