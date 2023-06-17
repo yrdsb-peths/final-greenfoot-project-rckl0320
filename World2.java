@@ -62,13 +62,11 @@ public class World2 extends World
             addObject(ko, 100, 300);
             ghostNum++;
         }
-        //Ends game when lives run out
-        if(lives == 0){
-            //Chara.death();
-            End gmov = new End();
-            Greenfoot.setWorld(gmov);
-        }
+        
     }
+    /**
+     * 
+     */
     public void timerScore(){
         z++;
         tmsc.setValue(z);
@@ -79,6 +77,16 @@ public class World2 extends World
             ghostNum++;
         }
         
+    }
+    
+    public void loseLife()
+    {
+        
+        if(lives == 0){
+            //Chara.death();
+            End gmov = new End();
+            Greenfoot.setWorld(gmov);
+        }
     }
     
 
