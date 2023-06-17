@@ -130,6 +130,7 @@ public class Chara extends Actor
      */
     public void interaction()
     {
+        //allows interaction with well, changes worlds 
         if(isTouching(Well.class)){
             if(Greenfoot.isKeyDown("z")){
                 
@@ -140,6 +141,7 @@ public class Chara extends Actor
                 
             }
         }
+        //allows interaction with ghost
         if(isTouching(Ghost.class)){
             removeTouching(Ghost.class);
         }

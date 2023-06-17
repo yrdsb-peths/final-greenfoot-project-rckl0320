@@ -17,12 +17,14 @@ public class World2 extends World
     Actor lightCircle;
     Ghost ko = new Ghost();
     SimpleTimer scoreCounter = new SimpleTimer();
+    int z = 0;
+    Label tmsc;
     public World2()
     {
         super(800, 600, 1, true);
         scoreCounter.mark();
         
-        
+       
         scrollActor = new Chara();
         addObject(scrollActor, 400, 500);
         addObject(ko, 100, 100);
@@ -32,15 +34,29 @@ public class World2 extends World
         lightCircle = new Spotlight();
         addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
         
-        timerScore();
+        tmsc = new Label(z, 75);
+        addObject(tmsc, 100, 100);
+    
+        
     }
     public void act()
     {
-        lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80); 
+        //timer
+        if(scoreCounter.millisElapsed() == 1000){
+            timerScore();
+        }
+        scoreCounter.mark(); 
+        
+        //Sets light circle to follow actor
+        lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);
+        
+        //Respawns Ghost 
         if(getObjects(Ghost.class).isEmpty()){
             addObject(ko, 100, 300);
             lives -= 1;
         }
+        
+        //Ends game when lives run out
         if(lives == 0){
             //Chara.death();
             End gmov = new End();
@@ -48,18 +64,8 @@ public class World2 extends World
         }
     }
     public void timerScore(){
-        int z = 0;
-        Label tmsc = new Label(z, 75);
-        addObject(tmsc, 100, 100);
-        while(!getObjects(Chara.class).isEmpty()){
-            if(scoreCounter.millisElapsed() < 1000){
-                return;
-            }
-            z += 1;
-            tmsc.setValue(z);
-            scoreCounter.mark();
-        }
-        
+        z += 1;
+        tmsc.setValue(z);
         
     }
     
