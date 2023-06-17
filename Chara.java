@@ -14,6 +14,7 @@ public class Chara extends Actor
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public static int lives = 3;
     
     public void act()
     {
@@ -122,7 +123,9 @@ public class Chara extends Actor
                 
                 Greenfoot.setWorld(worl);
             }
-        }   
+            
+        }
+        
     }
     
     /**
@@ -144,6 +147,7 @@ public class Chara extends Actor
         //allows interaction with ghost
         if(isTouching(Ghost.class)){
             removeTouching(Ghost.class);
+            lives--;
         }
     }
     

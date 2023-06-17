@@ -28,6 +28,6 @@ public class TipsScreen extends World
         TipDelay.mark();
         Forest firstWorld = new Forest();           
         Greenfoot.setWorld(firstWorld);
-        
+        Chara.lives = 3;
     }
 }

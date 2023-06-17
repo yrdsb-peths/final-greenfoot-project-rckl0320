@@ -13,7 +13,7 @@ public class Ghost extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int spd = 2;
+    public static int spd = 1;
     public void act()
     {
         GreenfootImage cr = getImage();

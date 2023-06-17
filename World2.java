@@ -12,10 +12,12 @@ public class World2 extends World
     public static final int WIDE = 800;
     public static final int HIGH = 600;
     
-    public int lives = 3;
+    //player character
     Actor scrollActor;
+    //light overlay
     Actor lightCircle;
-    Ghost ko = new Ghost();
+    
+    //score timer
     SimpleTimer scoreCounter = new SimpleTimer();
     int z = 0;
     Label tmsc;
@@ -31,7 +33,7 @@ public class World2 extends World
         scrollActor = new Chara();
         addObject(scrollActor, 400, 500);
         
-        
+        Ghost ko = new Ghost();
         addObject(ko, 100, 100);
         Well udgw = new Well();
         addObject(udgw, 700, 500);
@@ -58,11 +60,11 @@ public class World2 extends World
         //Respawns Ghost
         int ghostNum = 1;
         if(getObjects(Ghost.class).size() == ghostNum - 1){
-            lives--;
-            addObject(ko, 100, 300);
+            Ghost ka = new Ghost();
+            addObject(ka, 100, 300);
             ghostNum++;
         }
-        
+        loseLife();
     }
     /**
      * 
@@ -70,24 +72,26 @@ public class World2 extends World
     public void timerScore(){
         z++;
         tmsc.setValue(z);
-        if(z % 1000 == 0)
+        if(z % 500 == 0)
         {
             Ghost ke = new Ghost();
             addObject(ke, 500, 500);
             ghostNum++;
         }
-        
+        if(z % 2000 == 0){
+            Ghost.spd++;
+        }
     }
     
     public void loseLife()
     {
-        
-        if(lives == 0){
+        int li = Chara.lives;
+        if(li == 0){
             //Chara.death();
             End gmov = new End();
             Greenfoot.setWorld(gmov);
         }
     }
     
-
+    
 }
