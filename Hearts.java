@@ -14,6 +14,7 @@ public class Hearts extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        GreenfootImage ht = getImage();
+        ht.scale(32, 32);
     }
 }

@@ -19,11 +19,18 @@ public class World2 extends World
     
     //score timer
     SimpleTimer scoreCounter = new SimpleTimer();
+    
     int z = 0;
     Label tmsc;
+    
     //number of ghosts
     int ghostNum = 1;
-    
+    //Health
+    //hp bar
+        Hearts hp1 = new Hearts();
+        Hearts hp2 = new Hearts();
+        Hearts hp3 = new Hearts();
+        
     public World2()
     {
         super(800, 600, 1, true);
@@ -45,9 +52,14 @@ public class World2 extends World
         lightCircle = new Spotlight();
         addObject(lightCircle, scrollActor.getX(), scrollActor.getY() + 80);
         //score counter
-        tmsc = new Label(z, 75);
-        addObject(tmsc, 100, 100);
-    
+        tmsc = new Label(z, 50);
+        addObject(tmsc, 75, 50);
+        
+        
+        addObject(hp1, 650, 50);
+        addObject(hp2, 700, 50);
+        addObject(hp3, 750, 50);
+        
         
     }
     public void act()
@@ -90,6 +102,12 @@ public class World2 extends World
     public void loseLife()
     {
         int li = Chara.lives;
+        if(li == 2){
+            removeObject(hp3);
+        }
+        if(li == 1){
+            removeObject(hp2);
+        }
         if(li == 0){
             //Chara.death();
             End gmov = new End();
