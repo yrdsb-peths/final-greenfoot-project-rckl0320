@@ -1,22 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Textbox here.
+ * Write a description of class Text2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Textbox extends Actor
+public class Text2 extends Text
 {
     /**
-     * Act - do whatever the Textbox wants to do. This method is called whenever
+     * Act - do whatever the Text2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-   
     public void act()
     {
-        GreenfootImage a = getImage();
-        a.scale(600, 300);  
+        // Add your action code here.
     }
-    public void setLocation(int x, int y){}
 }

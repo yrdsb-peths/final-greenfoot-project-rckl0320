@@ -10,6 +10,10 @@ public class World1 extends World
 {
     GreenfootImage[] bg = new GreenfootImage[4];
     SimpleTimer bgAnimation = new SimpleTimer();
+    
+    Textbox c = new Textbox();
+    Text4 four = new Text4();
+    SimpleTimer textTimer2 = new SimpleTimer();
     /**
      * Constructor for objects of class World1.
      * 
@@ -25,6 +29,7 @@ public class World1 extends World
         }
         bgAnimation.mark();
         setBackground(bg[0]);
+        
         prepare();
     }
 
@@ -37,12 +42,20 @@ public class World1 extends World
         bgAnimation.mark(); 
         setBackground(bg[imgIndx]);
         imgIndx = (imgIndx + 1) % bg.length;
+        
 
     }
 
     public void act()
     {
         animateBackground();
+        addObject(c, 400, 450);
+        addObject(four, 420, 530);
+        if(textTimer2.millisElapsed() < 2500){
+            return;
+        }
+        removeObject(four);
+        removeObject(c);
     }
     /**
      * Prepare the world for the start of the program.

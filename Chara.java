@@ -133,10 +133,10 @@ public class Chara extends Actor
      */
     public void interaction()
     {
+        
         //allows interaction with well, changes worlds 
         if(isTouching(Well.class)){
             if(Greenfoot.isKeyDown("z")){
-                
                 World1 wor = new World1();
                 wor.addObject(this, wor.getWidth()/2, 590);
                
@@ -151,13 +151,5 @@ public class Chara extends Actor
         }
     }
     
-    GreenfootImage[] ch = new GreenfootImage[4];
-    public void death(){
-        for(int i=0; i<ch.length; i++)
-        {
-            ch[i] = new GreenfootImage("images/dth/death" + i + ".png");
 
-        }
-        setImage(ch[0]);
-    }
 }

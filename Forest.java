@@ -16,10 +16,16 @@ public class Forest extends World
     public static final int WIDE = 800;
     public static final int HIGH = 600;
 
-    
+    //actor initiators
     Scroller scroller;
     Actor scrollActor;
-
+    //text related objects
+    SimpleTimer textTimer = new SimpleTimer();
+    Textbox b;
+   
+    Text1 one = new Text1();
+    Text2 two = new Text2();
+    Text3 three = new Text3();
     public Forest()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,9 +44,13 @@ public class Forest extends World
             
         Well a = new Well();
         addObject(a, getWidth()/2, 100);
-
-
         prepare();
+        
+        b = new Textbox();
+        addObject(b, 400, 450);
+       
+        addObject(one, 420, 530);
+      
     }
 
     public void act()
@@ -48,6 +58,21 @@ public class Forest extends World
         if(scrollActor != null){
             scroll();
         }
+        
+        
+        if(textTimer.millisElapsed() < 2000){
+            return;
+        }
+        removeObject(one);
+        
+        addObject(two, 420, 530);
+        if(textTimer.millisElapsed() < 4000){
+            return;
+        }
+        removeObject(two);
+        removeObject(b);
+        
+        
     }
 
     private void scroll()
@@ -96,4 +121,5 @@ public class Forest extends World
         addObject(tree19,398,20);
         tree19.setLocation(421,3);
     }
+    
 }
