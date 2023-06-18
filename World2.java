@@ -47,8 +47,7 @@ public class World2 extends World
         addObject(ko, 100, 100);
         
         
-        Well udgw = new Well();
-        addObject(udgw, 400, 300);
+       
         
         //light overlay        
         lightCircle = new Spotlight();
