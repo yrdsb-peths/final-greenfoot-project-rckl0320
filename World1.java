@@ -49,6 +49,8 @@ public class World1 extends World
     public void act()
     {
         animateBackground();
+        
+        //adds and removes text
         addObject(c, 400, 450);
         addObject(four, 420, 530);
         if(textTimer2.millisElapsed() < 2500){

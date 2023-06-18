@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Title extends World
 {
     SimpleTimer delay = new SimpleTimer();
+    //background music
+    GreenfootSound bgm = new GreenfootSound("images/bgm.mp3");
     /**
      * Constructor for objects of class Title.
      * 
@@ -24,6 +26,8 @@ public class Title extends World
     
     public void act()
     {
+        
+        bgm.playLoop();
         if(Greenfoot.isKeyDown("space"))
         {
             if(delay.millisElapsed() < 1000){
@@ -33,7 +37,7 @@ public class Title extends World
             Greenfoot.setWorld(tps);
             
         }
-
+    
     }
     
     

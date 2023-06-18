@@ -18,7 +18,7 @@ public class Ghost extends Actor
     {
         GreenfootImage cr = getImage();
         cr.scale(64, 64);
-        
+        spd = 1;
         roam();
     }
     

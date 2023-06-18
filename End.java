@@ -20,10 +20,5 @@ public class End extends World
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("space")){
-            Title restart = new Title();
-            Greenfoot.setWorld(restart);
-            
-        }
     }
 }

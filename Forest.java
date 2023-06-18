@@ -46,9 +46,9 @@ public class Forest extends World
         addObject(a, getWidth()/2, 100);
         prepare();
         
+        //adds text
         b = new Textbox();
         addObject(b, 400, 450);
-       
         addObject(one, 420, 530);
       
     }
@@ -59,7 +59,7 @@ public class Forest extends World
             scroll();
         }
         
-        
+        //removes text
         if(textTimer.millisElapsed() < 2000){
             return;
         }
