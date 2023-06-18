@@ -29,6 +29,10 @@ public class World2 extends World
     Hearts hp3 = new Hearts();
     
     Random rdm = new Random();
+    //text
+    Textbox c = new Textbox();
+    Text5 five = new Text5();
+    SimpleTimer textTimer3 = new SimpleTimer();
     public World2()
     {
         super(800, 600, 1, true);
@@ -53,12 +57,14 @@ public class World2 extends World
         tmsc = new Label(z, 50);
         addObject(tmsc, 75, 50);
         
-        
+        //hp hearts      
         addObject(hp1, 650, 50);
         addObject(hp2, 700, 50);
         addObject(hp3, 750, 50);
         
-        
+        //text
+        addObject(c, 400, 450); 
+        addObject(five, 420, 530);
     }
     public void act()
     {
@@ -71,7 +77,11 @@ public class World2 extends World
         //Sets light circle to follow actor
         lightCircle.setLocation(scrollActor.getX(), scrollActor.getY() + 80);
         
-        
+        if(textTimer3.millisElapsed() < 1500){
+            return;
+        }
+        removeObject(five);
+        removeObject(c);
         
         loseLife();
     }
